@@ -15,7 +15,7 @@ const useMoveDetailsQuery = (
   options?: Partial<UseQueryOptions<Movie, Error>>
 ) => {
   return useQuery({
-    queryKey: [MOVIE_DETAILS_QUERY_KEY],
+    queryKey: [MOVIE_DETAILS_QUERY_KEY, id],
     queryFn: () => getMovieDetails(id),
     ...options,
   });
