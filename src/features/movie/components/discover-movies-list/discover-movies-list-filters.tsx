@@ -87,7 +87,7 @@ export const DiscoverMoviesListFilters = ({ value, onChange }: Props) => {
             onChange({ ...value, sortBy: sortBy as DiscoverMoviesSortOption })
           }
         >
-          <SelectTrigger className="w-56 md:w-32">
+          <SelectTrigger className="w-56 md:w-48">
             <SelectValue placeholder="Region" />
           </SelectTrigger>
           <SelectContent>
