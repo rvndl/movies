@@ -36,7 +36,7 @@ interface Props {
 
 export const DiscoverMoviesListFilters = ({ value, onChange }: Props) => {
   return (
-    <section className="flex items-end gap-2">
+    <section className="flex flex-col md:flex-row items-end gap-2">
       <div className="grid gap-2">
         <p className="text-accent-foreground text-sm font-medium">
           Data premiery
@@ -48,7 +48,7 @@ export const DiscoverMoviesListFilters = ({ value, onChange }: Props) => {
               id="date"
               variant={"outline"}
               className={cn(
-                "w-[300px] justify-start text-left font-normal",
+                "w-56 justify-start text-left font-normal",
                 !value.date && "text-muted-foreground"
               )}
             >
@@ -56,11 +56,11 @@ export const DiscoverMoviesListFilters = ({ value, onChange }: Props) => {
               {value.date?.from ? (
                 value.date.to ? (
                   <>
-                    {format(value.date.from, "LLL dd, y", { locale: pl })} -{" "}
-                    {format(value.date.to, "LLL dd, y", { locale: pl })}
+                    {format(value.date.from, "dd.MM.yyyy", { locale: pl })} -{" "}
+                    {format(value.date.to, "dd.MM.yyyy", { locale: pl })}
                   </>
                 ) : (
-                  format(value.date.from, "LLL dd, y", { locale: pl })
+                  format(value.date.from, "dd.MM.yyyy", { locale: pl })
                 )
               ) : (
                 <span>Wybierz zakres dat</span>
@@ -87,7 +87,7 @@ export const DiscoverMoviesListFilters = ({ value, onChange }: Props) => {
             onChange({ ...value, sortBy: sortBy as DiscoverMoviesSortOption })
           }
         >
-          <SelectTrigger className="w-44">
+          <SelectTrigger className="w-56 md:w-32">
             <SelectValue placeholder="Region" />
           </SelectTrigger>
           <SelectContent>
